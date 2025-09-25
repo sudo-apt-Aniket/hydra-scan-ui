@@ -23,7 +23,7 @@ const Layout = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-light/20 to-accent-light/20">
+    <div className="min-h-screen bg-gradient-to-br from-background to-muted">
       {/* Mobile menu overlay */}
       {mobileMenuOpen && (
         <div 
@@ -42,7 +42,7 @@ const Layout = () => {
         <div className="flex h-16 items-center justify-between px-6 border-b border-border">
           <div className="flex items-center space-x-2">
             <div className="p-2 bg-gradient-to-br from-primary to-accent rounded-lg">
-              <Droplets className="h-6 w-6 text-white" />
+              <Droplets className="h-6 w-6 text-primary-foreground" />
             </div>
             <div>
               <h1 className="text-lg font-semibold text-foreground">HydroSkin</h1>
@@ -83,7 +83,7 @@ const Layout = () => {
           <Card className="p-4 bg-gradient-to-r from-primary/10 to-accent/10 border-primary/20">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center">
-                <Droplets className="h-5 w-5 text-white" />
+                <Droplets className="h-5 w-5 text-primary-foreground" />
               </div>
               <div>
                 <p className="text-sm font-medium">Daily Goal</p>
