@@ -23,7 +23,7 @@ const Layout = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background to-muted">
+    <div className="min-h-screen bg-gradient-to-br from-background to-muted flex">
       {/* Mobile menu overlay */}
       {mobileMenuOpen && (
         <div 
@@ -32,12 +32,12 @@ const Layout = () => {
         />
       )}
 
-      {/* Sidebar */}
+      {/* Sidebar - Fixed width on desktop */}
       <div className={`
         fixed inset-y-0 left-0 z-50 w-64 bg-card border-r border-border
-        transform transition-transform duration-300 ease-in-out lg:translate-x-0
+        transform transition-transform duration-300 ease-in-out
         ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}
-        lg:relative lg:flex lg:w-64 lg:flex-col
+        lg:relative lg:translate-x-0 lg:flex lg:flex-col
       `}>
         <div className="flex h-16 items-center justify-between px-6 border-b border-border">
           <div className="flex items-center space-x-2">
@@ -94,8 +94,8 @@ const Layout = () => {
         </div>
       </div>
 
-      {/* Main content area */}
-      <div className="lg:pl-64">
+      {/* Main content area - Takes remaining width */}
+      <div className="flex-1 flex flex-col min-w-0">
         {/* Mobile header */}
         <div className="flex h-16 items-center justify-between px-4 border-b border-border bg-card/80 backdrop-blur-sm lg:hidden">
           <Button
@@ -113,7 +113,7 @@ const Layout = () => {
         </div>
 
         {/* Page content */}
-        <main className="flex-1">
+        <main className="flex-1 p-6 overflow-auto">
           <Outlet />
         </main>
       </div>
